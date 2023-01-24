@@ -3,13 +3,28 @@
     margin: 0 auto;
 }
 
+h1 {
+    margin-bottom: 3rem;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
 #parametri-biglietto {
-    background-color: rgb(235, 166, 38);
+    background-color: rgb(243, 180, 9);
     text-align: center;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-transform: uppercase;
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+    border: 1px solid black;
 }
 
 .col {
@@ -47,14 +62,41 @@ select>option {
     padding: 10px 20px;
     border-radius: 20px;
     color: white;
-    margin: 20px 0;
+    margin: 1.5rem 0 0 0;
     border: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+#parametri-biglietto button:hover {
+    color: rgb(29, 88, 218);
+    background-color: white;
 }
 
 /* SECTION BIGLIETTO  */
 
 #biglietto {
     text-align: center;
+    display: none;
+}
+
+.contenuto-biglietto {
+    border: 1px solid black;
+    background-color: beige;
+    /* padding: 1rem; */
+}
+
+.contenuto-biglietto>* {
+    padding: 1rem;
+}
+
+.contenuto-biglietto .col-5:first-child {
+    background-color: rgb(243, 180, 9);
+}
+
+#passeggero {
+    font-weight: bolder;
 }
 
 #biglietto h2 {

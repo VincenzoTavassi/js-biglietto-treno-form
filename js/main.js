@@ -1,4 +1,3 @@
-let outputMsg = '';
 
 // EVENTO CLICK SUL BOTTONE CALCOLA 
 document.getElementById('calcola').addEventListener('click',
@@ -8,20 +7,24 @@ document.getElementById('calcola').addEventListener('click',
         const chilometri = parseInt(document.querySelector('#km').value);
         const etaPasseggero = document.querySelector('#eta-utente').value;
         const nomeUtente = document.querySelector('#nome-utente').value;
+        // ID MESSAGGIO DI ERRORE 
+        let errorMsg = document.getElementById('risultato');
         // CONTROLLO CHE IL CAMPO NOME NON SIA VUOTO
         if (nomeUtente.length < 5) {
-            document.getElementById('risultato').innerHTML = `E' necessario inserire un nome valido.`;
+            errorMsg.innerHTML = `E' necessario inserire un nome valido.`;
+            errorMsg.classList.add('d-block');
         }
-        // // CHECK CHILOMETRI ED ETA PASSEGGERO - SONO NUMERI? 
-        // else if (isNaN(chilometri) || isNaN(etaPasseggero)) {
-        //     document.getElementById('risultato').innerHTML = "E' necessario inserire dei numeri."
-        // }
-        // SE UN NOME PASSEGGERO E' PRESENTE PROSEGUI 
+        // CHECK CHILOMETRI - E' UN NUMERO? 
+        else if (isNaN(chilometri)) {
+            errorMsg.innerHTML = "E' necessario inserire il numero di chilometri"
+            errorMsg.classList.add('d-block');
+        }
+        // SE PASSEGGERO E CHILOMETRI SONO VALIDI PROSEGUI 
         else {
 
-            // // IMPOSTO UNA TARIFFA FISSA - es. € 0.21
+            // IMPOSTO UNA TARIFFA FISSA - es. € 0.21
             const tariffa = 0.21;
-            // // CALCOLO IL PREZZO es. € 0.21 per km e impongo massimo due decimali
+            // CALCOLO IL PREZZO es. € 0.21 per km e impongo massimo due decimali
             let prezzoStandard = parseFloat(tariffa * chilometri).toFixed(2);
             // DICHIARO VARIABILI ELEMENTI HTML 
             let costoBigliettoEl = document.getElementById('costo-biglietto');
@@ -29,8 +32,9 @@ document.getElementById('calcola').addEventListener('click',
             // SE PASSEGGERO E' MINORENNE APPLICO SCONTO DEL 20% con massimo due decimali
             if (etaPasseggero == 'ticket-minorenni') {
                 let scontoMinorenni = parseFloat(prezzoStandard - ((prezzoStandard * 20) / 100)).toFixed(2);
-                // outputMsg = 'Il prezzo riservato ai minorenni è di € ' + scontoMinorenni;
+                // MOSTRO IL COSTO NELL'ELEMENTO HTML 
                 costoBigliettoEl.innerHTML = '€ ' + scontoMinorenni;
+                // TIPO DI OFFERTA 
                 tipoOffertaEl.innerHTML = "Biglietto Young"
             }
             // SE IL PASSEGGERO E' OVER 65 APPLICO SCONTO DEL 40% con massimo due decimali
@@ -38,15 +42,28 @@ document.getElementById('calcola').addEventListener('click',
                 let scontoSenior = parseFloat(prezzoStandard - ((prezzoStandard * 40) / 100)).toFixed(2);
                 costoBigliettoEl.innerHTML = '€ ' + scontoSenior;
                 tipoOffertaEl.innerHTML = "Biglietto Senior"
-                // outputMsg = 'Il prezzo riservato agli over 65 è di € ' + scontoSenior;
             }
+            // ALTRIMENTI APPLICO IL PREZZO STANDARD 
             else {
                 costoBigliettoEl.innerHTML = '€ ' + prezzoStandard;
                 tipoOffertaEl.innerHTML = "Tariffa Ordinaria"
             }
+
+            // MOSTRO IL NOME UTENTE NEL BIGLIETTO 
             document.getElementById('passeggero').innerHTML = nomeUtente;
+
+            // NUMERO CARROZZA 
             document.getElementById('carrozza').innerHTML = Math.floor(Math.random() * 20) + 1;
+
+            // NUMERO BIGLIETTO 
             document.getElementById('numero-biglietto').innerHTML = '#' + Math.floor(Math.random() * 10000 + 1000);
+
+            // MOSTRO LA SECTION DEL BIGLIETTO 
+            let bigliettoCompletoEl = document.getElementById('biglietto');
+            bigliettoCompletoEl.style.display = 'block';
+
+            // RESET DI EVENTUALI ERRORI PRECEDENTI
+            errorMsg.className = 'd-none';
         }
     }
 )
