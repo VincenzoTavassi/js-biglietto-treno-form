@@ -11,15 +11,26 @@
 </head>
 
 <body>
-    <h1>Calcola il prezzo del tuo biglietto</h1>
-    <label for="nome-utente">Nome</label>
-    <input type="text" name="nome-utente" id="nome-utente">
-    <label for="km">Km</label>
-    <input type="number" name="km" id="km">
-    <label for="eta-utente">Età</label>
-    <input type="number" name="eta-utente" id="eta-utente">
-    <button type="button" id="calcola">Calcola</button>
-    <p id="risultato"> </p>
+    <section id="parametri-biglietto">
+        <h1>Calcola il prezzo del tuo biglietto</h1>
+        <label for="nome-utente">Nome</label>
+        <input type="text" name="nome-utente" id="nome-utente">
+        <label for="km">Km</label>
+        <input type="number" name="km" id="km">
+        <label for="eta-utente">Età</label>
+        <select name="eta-utente" id="eta-utente">
+            <option value="ticket-ordinario" selected>Ordinario</option>
+            <option value="ticket-minorenni">Tariffa minorenni</option>
+            <option value="ticket-senior">Tariffa Over65</option>
+        </select>
+        <button type="button" id="calcola">Calcola</button>
+        <p id="risultato"> </p>
+    </section>
+    <section id="biglietto">
+
+
+
+    </section>
 </body>
 
 </html>
