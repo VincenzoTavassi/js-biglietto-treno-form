@@ -9,8 +9,8 @@ document.getElementById('calcola').addEventListener('click',
         const nomeUtente = document.querySelector('#nome-utente').value;
         // ID MESSAGGIO DI ERRORE 
         let errorMsg = document.getElementById('risultato');
-        // CONTROLLO CHE IL CAMPO NOME NON SIA VUOTO
-        if (nomeUtente.length < 5) {
+        // CONTROLLO CHE IL CAMPO NOME NON SIA VUOTO E NON SIA UN NUMERO
+        if (nomeUtente.length < 5 || !isNaN(nomeUtente)) {
             errorMsg.innerHTML = `E' necessario inserire un nome valido.`;
             errorMsg.classList.add('d-block');
         }
