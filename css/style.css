@@ -3,6 +3,14 @@
     margin: 0 auto;
 }
 
+.calcolo-prezzo {
+    padding: 1rem;
+    background-color: beige;
+    color: #333;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
 h1 {
     margin-bottom: 3rem;
 }

@@ -56,7 +56,7 @@ document.getElementById('calcola').addEventListener('click',
             document.getElementById('carrozza').innerHTML = Math.floor(Math.random() * 20) + 1;
 
             // NUMERO BIGLIETTO 
-            document.getElementById('numero-biglietto').innerHTML = '#' + Math.floor(Math.random() * 10000 + 1000);
+            document.getElementById('numero-biglietto').innerHTML = '#' + parseInt(Math.floor(Math.random() * 10000) + 1000);
 
             // MOSTRO LA SECTION DEL BIGLIETTO 
             let bigliettoCompletoEl = document.getElementById('biglietto');
