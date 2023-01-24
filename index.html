@@ -12,22 +12,57 @@
 
 <body>
     <section id="parametri-biglietto">
-        <h1>Calcola il prezzo del tuo biglietto</h1>
-        <label for="nome-utente">Nome</label>
-        <input type="text" name="nome-utente" id="nome-utente">
-        <label for="km">Km</label>
-        <input type="number" name="km" id="km">
-        <label for="eta-utente">Età</label>
-        <select name="eta-utente" id="eta-utente">
-            <option value="ticket-ordinario" selected>Ordinario</option>
-            <option value="ticket-minorenni">Tariffa minorenni</option>
-            <option value="ticket-senior">Tariffa Over65</option>
-        </select>
-        <button type="button" id="calcola">Calcola</button>
-        <p id="risultato"> </p>
+        <div class="container">
+
+            <h1>Calcola il prezzo del tuo biglietto</h1>
+            <div class="row">
+                <div class="col">
+                    <label for="nome-utente">Nome e Cognome</label>
+                    <input type="text" name="nome-utente" id="nome-utente">
+                </div>
+                <div class="col">
+                    <label for="km">Km di percorrenza</label>
+                    <input type="number" name="km" id="km">
+                </div>
+                <div class="col">
+                    <label for="eta-utente">Tipo di biglietto</label>
+                    <select name="eta-utente" id="eta-utente">
+                        <option value="ticket-ordinario" selected>Ordinario</option>
+                        <option value="ticket-minorenni">Tariffa minorenni</option>
+                        <option value="ticket-senior">Tariffa Over65</option>
+                    </select>
+                </div>
+            </div>
+            <button type="button" id="calcola">CALCOLA</button>
+            <p id="risultato"> </p>
+        </div>
     </section>
     <section id="biglietto">
+        <div class="container">
 
+            <div class="row">
+                <div class="col-5">
+                    <h2>Passeggero</h2>
+                    <span id="passeggero"></span>
+                </div>
+                <div class="col-5">
+                    <h2>Offerta</h2>
+                    <span id="offerta"></span>
+                </div>
+                <div class="col-5">
+                    <h2>Carrozza</h2>
+                    <span id="carrozza"></span>
+                </div>
+                <div class="col-5">
+                    <h2>Numero biglietto</h2>
+                    <span id="numero-biglietto"></span>
+                </div>
+                <div class="col-5">
+                    <h2>Costo biglietto</h2>
+                    <span id="costo-biglietto"></span>
+                </div>
+            </div>
+        </div>
 
 
     </section>

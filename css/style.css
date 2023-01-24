@@ -1,0 +1,66 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#parametri-biglietto {
+    background-color: rgb(235, 166, 38);
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.col {
+    width: calc(100% / 3);
+}
+
+.col-5 {
+    width: calc(100% / 5);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input,
+select {
+    border-radius: 20px;
+    border: none;
+    min-height: 25px;
+}
+
+select>option {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+#parametri-biglietto button {
+    background-color: rgb(29, 88, 218);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    margin: 20px 0;
+    border: none;
+}
+
+/* SECTION BIGLIETTO  */
+
+#biglietto {
+    text-align: center;
+}
+
+#biglietto h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
