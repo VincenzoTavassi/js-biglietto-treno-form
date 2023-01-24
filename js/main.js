@@ -15,7 +15,7 @@ document.getElementById('calcola').addEventListener('click',
             errorMsg.classList.add('d-block');
         }
         // CHECK CHILOMETRI - E' UN NUMERO? 
-        else if (isNaN(chilometri)) {
+        else if (isNaN(chilometri) || chilometri == 0) {
             errorMsg.innerHTML = "E' necessario inserire il numero di chilometri"
             errorMsg.classList.add('d-block');
         }
