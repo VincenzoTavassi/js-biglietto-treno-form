@@ -7,17 +7,22 @@ document.getElementById('calcola').addEventListener('click',
         const chilometri = parseInt(document.querySelector('#km').value);
         const etaPasseggero = document.querySelector('#eta-utente').value;
         const nomeUtente = document.querySelector('#nome-utente').value;
-        // ID MESSAGGIO DI ERRORE 
+        // ID MESSAGGIO DI ERRORE E SECTION BIGLIETTO
         let errorMsg = document.getElementById('risultato');
+        let bigliettoCompletoEl = document.getElementById('biglietto');
         // CONTROLLO CHE IL CAMPO NOME NON SIA VUOTO E NON SIA UN NUMERO
         if (nomeUtente.length < 5 || !isNaN(nomeUtente)) {
             errorMsg.innerHTML = `E' necessario inserire un nome valido.`;
             errorMsg.classList.add('d-block');
+            // CHIUDO EVENTUALI BIGLIETTI GIA' APERTI 
+            bigliettoCompletoEl.style.display = 'none';
         }
         // CHECK CHILOMETRI - E' UN NUMERO? 
         else if (isNaN(chilometri) || chilometri == 0) {
             errorMsg.innerHTML = "E' necessario inserire il numero di chilometri"
             errorMsg.classList.add('d-block');
+            // CHIUDO EVENTUALI BIGLIETTI GIA' APERTI 
+            bigliettoCompletoEl.style.display = 'none';
         }
         // SE PASSEGGERO E CHILOMETRI SONO VALIDI PROSEGUI 
         else {
@@ -59,7 +64,6 @@ document.getElementById('calcola').addEventListener('click',
             document.getElementById('numero-biglietto').innerHTML = '#' + parseInt(Math.floor(Math.random() * 10000) + 1000);
 
             // MOSTRO LA SECTION DEL BIGLIETTO 
-            let bigliettoCompletoEl = document.getElementById('biglietto');
             bigliettoCompletoEl.style.display = 'block';
 
             // RESET DI EVENTUALI ERRORI PRECEDENTI
